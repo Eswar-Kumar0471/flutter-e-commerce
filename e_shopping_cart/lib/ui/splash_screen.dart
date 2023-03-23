@@ -1,4 +1,8 @@
+import 'dart:async';
+
 import 'package:e_shopping_cart/constants/appColors.dart';
+import 'package:e_shopping_cart/ui/login_screen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -10,6 +14,15 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreen extends State<SplashScreen> {
+  @override
+  void initState() {
+    Timer(
+        Duration(seconds: 2),
+        () => Navigator.push(
+            context, CupertinoPageRoute(builder: (_) => LoginScreen())));
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
